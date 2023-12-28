@@ -1,0 +1,163 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 500px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "100% Raw Coconut Water", "label": "100% Raw Coconut Water", "shape": "dot", "size": 2.596}, {"color": "#97c2fc", "id": "Bag of Organic Bananas", "label": "Bag of Organic Bananas", "shape": "dot", "size": 30.96}, {"color": "#97c2fc", "id": "Organic Hass Avocado", "label": "Organic Hass Avocado", "shape": "dot", "size": 14.586}, {"color": "#97c2fc", "id": "Organic Raspberries", "label": "Organic Raspberries", "shape": "dot", "size": 11.092}, {"color": "#97c2fc", "id": "Organic Strawberries", "label": "Organic Strawberries", "shape": "dot", "size": 21.788}, {"color": "#97c2fc", "id": "100% Whole Wheat Bread", "label": "100% Whole Wheat Bread", "shape": "dot", "size": 4.596}, {"color": "#97c2fc", "id": "Apple Honeycrisp Organic", "label": "Apple Honeycrisp Organic", "shape": "dot", "size": 4.504}, {"color": "#97c2fc", "id": "Asparagus", "label": "Asparagus", "shape": "dot", "size": 7.736}, {"color": "#97c2fc", "id": "Broccoli Crown", "label": "Broccoli Crown", "shape": "dot", "size": 5.864}, {"color": "#97c2fc", "id": "Cantaloupe", "label": "Cantaloupe", "shape": "dot", "size": 2.43}, {"color": "#97c2fc", "id": "Carrots", "label": "Carrots", "shape": "dot", "size": 4.994}, {"color": "#97c2fc", "id": "Celery Hearts", "label": "Celery Hearts", "shape": "dot", "size": 1.372}, {"color": "#97c2fc", "id": "Crackers Cheddar Bunnies Snack Packs", "label": "Crackers Cheddar Bunnies Snack Packs", "shape": "dot", "size": 0.874}, {"color": "#97c2fc", "id": "Extra Virgin Olive Oil", "label": "Extra Virgin Olive Oil", "shape": "dot", "size": 4.136}, {"color": "#97c2fc", "id": "Feta Cheese Crumbles", "label": "Feta Cheese Crumbles", "shape": "dot", "size": 2.898}, {"color": "#97c2fc", "id": "Fresh Cauliflower", "label": "Fresh Cauliflower", "shape": "dot", "size": 5.302}, {"color": "#97c2fc", "id": "Frozen Organic Wild Blueberries", "label": "Frozen Organic Wild Blueberries", "shape": "dot", "size": 2.13}, {"color": "#97c2fc", "id": "Garlic", "label": "Garlic", "shape": "dot", "size": 3.84}, {"color": "#97c2fc", "id": "Globe Eggplant", "label": "Globe Eggplant", "shape": "dot", "size": 1.326}, {"color": "#97c2fc", "id": "Grape White/Green Seedless", "label": "Grape White/Green Seedless", "shape": "dot", "size": 3.054}, {"color": "#97c2fc", "id": "Grated Parmesan", "label": "Grated Parmesan", "shape": "dot", "size": 3.388}, {"color": "#97c2fc", "id": "Green Bell Pepper", "label": "Green Bell Pepper", "shape": "dot", "size": 5.042}, {"color": "#97c2fc", "id": "Half \u0026 Half", "label": "Half \u0026 Half", "shape": "dot", "size": 4.848}, {"color": "#97c2fc", "id": "Hass Avocado", "label": "Hass Avocado", "shape": "dot", "size": 3.266}, {"color": "#97c2fc", "id": "Hass Avocados", "label": "Hass Avocados", "shape": "dot", "size": 4.552}, {"color": "#97c2fc", "id": "Honey Nut Cheerios", "label": "Honey Nut Cheerios", "shape": "dot", "size": 2.436}, {"color": "#97c2fc", "id": "Honeycrisp Apple", "label": "Honeycrisp Apple", "shape": "dot", "size": 7.102}, {"color": "#97c2fc", "id": "Jalapeno Peppers", "label": "Jalapeno Peppers", "shape": "dot", "size": 3.798}, {"color": "#97c2fc", "id": "Large Alfresco Eggs", "label": "Large Alfresco Eggs", "shape": "dot", "size": 3.796}, {"color": "#97c2fc", "id": "Large Lemon", "label": "Large Lemon", "shape": "dot", "size": 16.27}, {"color": "#97c2fc", "id": "Lemon Hummus", "label": "Lemon Hummus", "shape": "dot", "size": 1.244}, {"color": "#97c2fc", "id": "Lime Sparkling Water", "label": "Lime Sparkling Water", "shape": "dot", "size": 3.932}, {"color": "#97c2fc", "id": "Limes", "label": "Limes", "shape": "dot", "size": 12.066}, {"color": "#97c2fc", "id": "Marinara Sauce", "label": "Marinara Sauce", "shape": "dot", "size": 1.508}, {"color": "#97c2fc", "id": "Michigan Organic Kale", "label": "Michigan Organic Kale", "shape": "dot", "size": 5.254}, {"color": "#97c2fc", "id": "Naturals Chicken Nuggets", "label": "Naturals Chicken Nuggets", "shape": "dot", "size": 0.906}, {"color": "#97c2fc", "id": "Orange Bell Pepper", "label": "Orange Bell Pepper", "shape": "dot", "size": 3.728}, {"color": "#97c2fc", "id": "Organic American Cheese Singles", "label": "Organic American Cheese Singles", "shape": "dot", "size": 1.392}, {"color": "#97c2fc", "id": "Organic Avocado", "label": "Organic Avocado", "shape": "dot", "size": 14.818}, {"color": "#97c2fc", "id": "Organic Baby Arugula", "label": "Organic Baby Arugula", "shape": "dot", "size": 5.846}, {"color": "#97c2fc", "id": "Organic Baby Broccoli", "label": "Organic Baby Broccoli", "shape": "dot", "size": 2.702}, {"color": "#97c2fc", "id": "Organic Baby Carrots", "label": "Organic Baby Carrots", "shape": "dot", "size": 7.194}, {"color": "#97c2fc", "id": "Organic Baby Rainbow Carrots", "label": "Organic Baby Rainbow Carrots", "shape": "dot", "size": 1.828}, {"color": "#97c2fc", "id": "Banana", "label": "Banana", "shape": "dot", "size": 37.452}, {"color": "#97c2fc", "id": "Organic Baby Spinach", "label": "Organic Baby Spinach", "shape": "dot", "size": 19.568}, {"color": "#97c2fc", "id": "Strawberries", "label": "Strawberries", "shape": "dot", "size": 12.988}, {"color": "#97c2fc", "id": "2% Reduced Fat Milk", "label": "2% Reduced Fat Milk", "shape": "dot", "size": 3.08}, {"color": "#97c2fc", "id": "Organic Blueberries", "label": "Organic Blueberries", "shape": "dot", "size": 9.932}, {"color": "#97c2fc", "id": "Organic Cucumber", "label": "Organic Cucumber", "shape": "dot", "size": 9.226}, {"color": "#97c2fc", "id": "Organic D\u0027Anjou Pears", "label": "Organic D\u0027Anjou Pears", "shape": "dot", "size": 3.786}, {"color": "#97c2fc", "id": "Organic Garlic", "label": "Organic Garlic", "shape": "dot", "size": 8.316}, {"color": "#97c2fc", "id": "Organic Yellow Onion", "label": "Organic Yellow Onion", "shape": "dot", "size": 8.58}, {"color": "#97c2fc", "id": "Organic Zucchini", "label": "Organic Zucchini", "shape": "dot", "size": 9.178}, {"color": "#97c2fc", "id": "Organic Blackberries", "label": "Organic Blackberries", "shape": "dot", "size": 5.686}, {"color": "#97c2fc", "id": "Organic Cilantro", "label": "Organic Cilantro", "shape": "dot", "size": 7.052}, {"color": "#97c2fc", "id": "Organic Gala Apples", "label": "Organic Gala Apples", "shape": "dot", "size": 5.618}, {"color": "#97c2fc", "id": "Organic Garnet Sweet Potato (Yam)", "label": "Organic Garnet Sweet Potato (Yam)", "shape": "dot", "size": 5.136}, {"color": "#97c2fc", "id": "Organic Grape Tomatoes", "label": "Organic Grape Tomatoes", "shape": "dot", "size": 7.646}, {"color": "#97c2fc", "id": "Organic Italian Parsley Bunch", "label": "Organic Italian Parsley Bunch", "shape": "dot", "size": 4.8}, {"color": "#97c2fc", "id": "Organic Large Extra Fancy Fuji Apple", "label": "Organic Large Extra Fancy Fuji Apple", "shape": "dot", "size": 5.782}, {"color": "#97c2fc", "id": "Organic Lemon", "label": "Organic Lemon", "shape": "dot", "size": 7.01}, {"color": "#97c2fc", "id": "Organic Peeled Whole Baby Carrots", "label": "Organic Peeled Whole Baby Carrots", "shape": "dot", "size": 4.92}, {"color": "#97c2fc", "id": "Organic Red Bell Pepper", "label": "Organic Red Bell Pepper", "shape": "dot", "size": 4.786}, {"color": "#97c2fc", "id": "Organic Red Onion", "label": "Organic Red Onion", "shape": "dot", "size": 7.636}, {"color": "#97c2fc", "id": "Organic Small Bunch Celery", "label": "Organic Small Bunch Celery", "shape": "dot", "size": 5.246}, {"color": "#97c2fc", "id": "Organic Whole Milk", "label": "Organic Whole Milk", "shape": "dot", "size": 9.816}, {"color": "#97c2fc", "id": "Original Hummus", "label": "Original Hummus", "shape": "dot", "size": 5.716}, {"color": "#97c2fc", "id": "Red Peppers", "label": "Red Peppers", "shape": "dot", "size": 5.81}, {"color": "#97c2fc", "id": "Seedless Red Grapes", "label": "Seedless Red Grapes", "shape": "dot", "size": 8.118}]);
+                  edges = new vis.DataSet([{"arrows": "to", "from": "100% Raw Coconut Water", "lift": 1.8274594436417504, "to": "Bag of Organic Bananas", "width": 3.339608018155416}, {"arrows": "to", "from": "100% Raw Coconut Water", "lift": 1.8637896558927984, "to": "Organic Hass Avocado", "width": 3.473711881412996}, {"arrows": "to", "from": "100% Raw Coconut Water", "lift": 2.4172487828479845, "to": "Organic Raspberries", "width": 5.843091678180063}, {"arrows": "to", "from": "100% Raw Coconut Water", "lift": 1.4877903513996427, "to": "Organic Strawberries", "width": 2.2135201297178724}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8139265051815118, "to": "100% Whole Wheat Bread", "width": 0.6624763558369895}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.7838979103921506, "to": "Apple Honeycrisp Organic", "width": 3.1822917547014815}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.2314265174078256, "to": "Asparagus", "width": 1.5164112677751658}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.7882995509163734, "to": "Broccoli Crown", "width": 0.621416181974956}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.269334236693701, "to": "Cantaloupe", "width": 1.6112094044427807}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.1734658557088464, "to": "Carrots", "width": 1.3770221145144952}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.3985959774322752, "to": "Celery Hearts", "width": 1.956070708089741}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4920244536575082, "to": "Crackers Cheddar Bunnies Snack Packs", "width": 2.2261369703119858}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.7892253284277254, "to": "Extra Virgin Olive Oil", "width": 0.6228766190318511}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.3775468740929933, "to": "Feta Cheese Crumbles", "width": 1.897635390323377}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.3043265608269772, "to": "Fresh Cauliflower", "width": 1.7012677772787301}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.3971421354598925, "to": "Frozen Organic Wild Blueberries", "width": 1.9520061466774286}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8094935642345132, "to": "Garlic", "width": 0.655279830537096}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.5841789052069426, "to": "Globe Eggplant", "width": 2.5096228037026673}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4473133989974054, "to": "Grape White/Green Seedless", "width": 2.094716074917423}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.419676686031826, "to": "Grated Parmesan", "width": 2.0154818928623075}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.9303211299276226, "to": "Green Bell Pepper", "width": 0.8654974047898085}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.120389686248331, "to": "Half \u0026 Half", "width": 1.2552730490516333}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8939479443381553, "to": "Hass Avocado", "width": 0.7991429271864136}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4293343505626548, "to": "Hass Avocados", "width": 2.042996685698366}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8004272363150867, "to": "Honey Nut Cheerios", "width": 0.6406837606350076}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.960108427398147, "to": "Honeycrisp Apple", "width": 0.9218081923609428}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.0587661856019666, "to": "Jalapeno Peppers", "width": 1.1209858357741378}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4096871429947833, "to": "Large Alfresco Eggs", "width": 1.9872178411247945}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8729491671221583, "to": "Large Lemon", "width": 0.7620402483792699}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.7656483154009266, "to": "Lemon Hummus", "width": 3.11751397367813}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.006826712346021, "to": "Lime Sparkling Water", "width": 1.0137000286934974}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.0503690744747785, "to": "Limes", "width": 1.1032751926130027}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.3837172968212936, "to": "Marinara Sauce", "width": 1.914673557522428}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.2738280670523658, "to": "Michigan Organic Kale", "width": 1.6226379444103667}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4950508724276046, "to": "Naturals Chicken Nuggets", "width": 2.2351771111465415}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.0736324231395284, "to": "Orange Bell Pepper", "width": 1.1526865800164554}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.530871763444155, "to": "Organic American Cheese Singles", "width": 2.3435683561106173}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 0.8692080469899433, "to": "Organic Avocado", "width": 0.7555226289520713}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.5073959252638167, "to": "Organic Baby Arugula", "width": 2.272242475501958}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.452920725984481, "to": "Organic Baby Broccoli", "width": 2.1109786359952714}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.4251365991659952, "to": "Organic Baby Carrots", "width": 2.0310143262824187}, {"arrows": "to", "from": "Bag of Organic Bananas", "lift": 1.1848429484927272, "to": "Organic Baby Rainbow Carrots", "width": 1.4038528125929395}, {"arrows": "to", "from": "Organic Hass Avocado", "lift": 1.0690164954870836, "to": "100% Whole Wheat Bread", "width": 1.1427962676234857}, {"arrows": "to", "from": "Organic Hass Avocado", "lift": 2.1515934539190353, "to": "Apple Honeycrisp Organic", "width": 4.629354390947244}, {"arrows": "to", "from": "Organic Hass Avocado", "lift": 1.109384950561421, "to": "Asparagus", "width": 1.2307349685321667}, {"arrows": "to", "from": "Organic Raspberries", "lift": 1.0175286450120888, "to": "100% Whole Wheat Bread", "width": 1.0353645434201375}, {"arrows": "to", "from": "Organic Raspberries", "lift": 1.9663569313962044, "to": "Apple Honeycrisp Organic", "width": 3.866559581649897}, {"arrows": "to", "from": "Organic Raspberries", "lift": 1.3361691288843607, "to": "Asparagus", "width": 1.7853479409835913}, {"arrows": "to", "from": "Organic Strawberries", "lift": 0.9585742842864282, "to": "100% Whole Wheat Bread", "width": 0.9188646584952381}, {"arrows": "to", "from": "Organic Strawberries", "lift": 1.5677277640249643, "to": "Apple Honeycrisp Organic", "width": 2.457770342094714}, {"arrows": "to", "from": "Organic Strawberries", "lift": 1.181155576058125, "to": "Asparagus", "width": 1.395128494853201}, {"arrows": "to", "from": "100% Whole Wheat Bread", "lift": 1.2590725806451613, "to": "Banana", "width": 1.585263763332466}, {"arrows": "to", "from": "100% Whole Wheat Bread", "lift": 0.8887246852764095, "to": "Limes", "width": 0.789831566219653}, {"arrows": "to", "from": "100% Whole Wheat Bread", "lift": 0.8037323037323038, "to": "Organic Baby Spinach", "width": 0.6459856160628362}, {"arrows": "to", "from": "100% Whole Wheat Bread", "lift": 1.3633510710874608, "to": "Strawberries", "width": 1.8587261430353266}, {"arrows": "to", "from": "Banana", "lift": 1.5629866518353728, "to": "2% Reduced Fat Milk", "width": 2.442927273815549}, {"arrows": "to", "from": "Banana", "lift": 1.007258064516129, "to": "Asparagus", "width": 1.0145688085327784}, {"arrows": "to", "from": "Limes", "lift": 1.1128931658201904, "to": "Apple Honeycrisp Organic", "width": 1.2385311985292857}, {"arrows": "to", "from": "Limes", "lift": 1.4577188328912467, "to": "Asparagus", "width": 2.1249441957658184}, {"arrows": "to", "from": "Organic Baby Spinach", "lift": 1.08697964511918, "to": "Apple Honeycrisp Organic", "width": 1.1815247489034184}, {"arrows": "to", "from": "Organic Baby Spinach", "lift": 1.6978250439788902, "to": "Asparagus", "width": 2.8826098799619206}, {"arrows": "to", "from": "Strawberries", "lift": 0.9084637425611637, "to": "Asparagus", "width": 0.8253063715482363}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 1.536852467085025, "to": "Organic Blueberries", "width": 2.3619155055853276}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 1.353421688755522, "to": "Organic Cucumber", "width": 1.8317502675938488}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 2.5750453570839515, "to": "Organic D\u0027Anjou Pears", "width": 6.630858591039615}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 2.1515934539190353, "to": "Organic Garlic", "width": 4.629354390947244}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 2.000981912144703, "to": "Organic Yellow Onion", "width": 4.003928612730271}, {"arrows": "to", "from": "Apple Honeycrisp Organic", "lift": 1.9304016035161435, "to": "Organic Zucchini", "width": 3.7264503508576983}, {"arrows": "to", "from": "Organic Blueberries", "lift": 1.281025641025641, "to": "Asparagus", "width": 1.6410266929651547}, {"arrows": "to", "from": "Organic Cucumber", "lift": 1.394665012406948, "to": "Asparagus", "width": 1.9450904968320724}, {"arrows": "to", "from": "Organic D\u0027Anjou Pears", "lift": 1.2776186579378068, "to": "Asparagus", "width": 1.6323094351108027}, {"arrows": "to", "from": "Organic Garlic", "lift": 1.38149824032177, "to": "Asparagus", "width": 1.9085373880121468}, {"arrows": "to", "from": "Organic Yellow Onion", "lift": 1.3130512820512819, "to": "Asparagus", "width": 1.724103669296515}, {"arrows": "to", "from": "Organic Zucchini", "lift": 1.9155523604121731, "to": "Asparagus", "width": 3.669340845480648}, {"arrows": "to", "from": "Asparagus", "lift": 1.8050815850815853, "to": "Broccoli Crown", "width": 3.258319528800649}, {"arrows": "to", "from": "Asparagus", "lift": 1.426884996191927, "to": "Fresh Cauliflower", "width": 2.0360007923576355}, {"arrows": "to", "from": "Asparagus", "lift": 2.3319641523525014, "to": "Garlic", "width": 5.43805680785712}, {"arrows": "to", "from": "Asparagus", "lift": 1.7192712550607288, "to": "Green Bell Pepper", "width": 2.9558936484780935}, {"arrows": "to", "from": "Asparagus", "lift": 1.3326105661676133, "to": "Large Lemon", "width": 1.775850921061567}, {"arrows": "to", "from": "Asparagus", "lift": 1.6680021367521367, "to": "Michigan Organic Kale", "width": 2.782231128209694}, {"arrows": "to", "from": "Asparagus", "lift": 1.776765015806112, "to": "Orange Bell Pepper", "width": 3.156893921392493}, {"arrows": "to", "from": "Asparagus", "lift": 1.5513837437350186, "to": "Organic Avocado", "width": 2.406791520325282}, {"arrows": "to", "from": "Asparagus", "lift": 1.4112994350282486, "to": "Organic Baby Arugula", "width": 1.9917660953110536}, {"arrows": "to", "from": "Asparagus", "lift": 1.5660115215181294, "to": "Organic Baby Carrots", "width": 2.4523920855275265}, {"arrows": "to", "from": "Asparagus", "lift": 1.3653036437246966, "to": "Organic Blackberries", "width": 1.8640540395679333}, {"arrows": "to", "from": "Asparagus", "lift": 1.7678153846153848, "to": "Organic Cilantro", "width": 3.125171234082841}, {"arrows": "to", "from": "Asparagus", "lift": 1.5652981849611063, "to": "Organic Gala Apples", "width": 2.4501584078425336}, {"arrows": "to", "from": "Asparagus", "lift": 1.60993762993763, "to": "Organic Garnet Sweet Potato (Yam)", "width": 2.5918991722891933}, {"arrows": "to", "from": "Asparagus", "lift": 1.441153846153846, "to": "Organic Grape Tomatoes", "width": 2.076924408284023}, {"arrows": "to", "from": "Asparagus", "lift": 1.6339612768184195, "to": "Organic Italian Parsley Bunch", "width": 2.66982945414208}, {"arrows": "to", "from": "Asparagus", "lift": 1.1737904629307343, "to": "Organic Large Extra Fancy Fuji Apple", "width": 1.3777840508671475}, {"arrows": "to", "from": "Asparagus", "lift": 1.414119214119214, "to": "Organic Lemon", "width": 1.9997331517411436}, {"arrows": "to", "from": "Asparagus", "lift": 1.6504011326097214, "to": "Organic Peeled Whole Baby Carrots", "width": 2.723823898519451}, {"arrows": "to", "from": "Asparagus", "lift": 1.2970384615384616, "to": "Organic Red Bell Pepper", "width": 1.6823087707100592}, {"arrows": "to", "from": "Asparagus", "lift": 2.0263496503496503, "to": "Organic Red Onion", "width": 4.10609290547215}, {"arrows": "to", "from": "Asparagus", "lift": 1.2445197289756873, "to": "Organic Small Bunch Celery", "width": 1.5488293558097181}, {"arrows": "to", "from": "Asparagus", "lift": 1.4557109557109555, "to": "Organic Whole Milk", "width": 2.1190943865769034}, {"arrows": "to", "from": "Asparagus", "lift": 1.4823296703296704, "to": "Original Hummus", "width": 2.1973012515396695}, {"arrows": "to", "from": "Asparagus", "lift": 1.3053929765886287, "to": "Red Peppers", "width": 1.7040508233269203}, {"arrows": "to", "from": "Asparagus", "lift": 1.0376307692307691, "to": "Seedless Red Grapes", "width": 1.0766776132544376}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.33,
+            "damping": 0.95,
+            "nodeDistance": 320,
+            "springConstant": 0.1,
+            "springLength": 20
+        },
+        "solver": "repulsion",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,201 @@
+Association Rules,lift,confidence
+100% Raw Coconut Water ==> Bag of Organic Bananas,1.8274594436417504,0.547945205479452
+Bag of Organic Bananas ==> 100% Raw Coconut Water,1.8274594436417504,0.05340453938584779
+100% Raw Coconut Water ==> Organic Hass Avocado,1.8637896558927984,0.3424657534246575
+Organic Hass Avocado ==> 100% Raw Coconut Water,1.8637896558927984,0.05446623093681917
+Organic Raspberries ==> 100% Raw Coconut Water,2.4172487828479845,0.0706401766004415
+100% Raw Coconut Water ==> Organic Raspberries,2.4172487828479845,0.4383561643835616
+Organic Strawberries ==> 100% Raw Coconut Water,1.4877903513996427,0.043478260869565216
+100% Raw Coconut Water ==> Organic Strawberries,1.4877903513996427,0.3972602739726027
+100% Whole Wheat Bread ==> Bag of Organic Bananas,0.8139265051815119,0.24404761904761907
+Bag of Organic Bananas ==> 100% Whole Wheat Bread,0.8139265051815118,0.05473965287049399
+100% Whole Wheat Bread ==> Banana,1.2590725806451613,0.375
+Banana ==> 100% Whole Wheat Bread,1.2590725806451613,0.0846774193548387
+100% Whole Wheat Bread ==> Limes,0.8887246852764094,0.15476190476190477
+Limes ==> 100% Whole Wheat Bread,0.8887246852764095,0.059770114942528735
+100% Whole Wheat Bread ==> Organic Baby Spinach,0.8037323037323038,0.15476190476190477
+Organic Baby Spinach ==> 100% Whole Wheat Bread,0.8037323037323038,0.05405405405405406
+100% Whole Wheat Bread ==> Organic Hass Avocado,1.0690164954870836,0.19642857142857142
+Organic Hass Avocado ==> 100% Whole Wheat Bread,1.0690164954870836,0.0718954248366013
+Organic Raspberries ==> 100% Whole Wheat Bread,1.0175286450120888,0.0684326710816777
+100% Whole Wheat Bread ==> Organic Raspberries,1.0175286450120888,0.18452380952380953
+Organic Strawberries ==> 100% Whole Wheat Bread,0.9585742842864281,0.06446776611694152
+100% Whole Wheat Bread ==> Organic Strawberries,0.9585742842864282,0.25595238095238093
+100% Whole Wheat Bread ==> Strawberries,1.3633510710874608,0.19047619047619047
+Strawberries ==> 100% Whole Wheat Bread,1.3633510710874608,0.09169054441260745
+Banana ==> 2% Reduced Fat Milk,1.5629866518353728,0.036290322580645164
+2% Reduced Fat Milk ==> Banana,1.5629866518353728,0.4655172413793104
+Apple Honeycrisp Organic ==> Bag of Organic Bananas,1.7838979103921504,0.5348837209302325
+Bag of Organic Bananas ==> Apple Honeycrisp Organic,1.7838979103921506,0.09212283044058744
+Apple Honeycrisp Organic ==> Limes,1.1128931658201906,0.19379844961240308
+Limes ==> Apple Honeycrisp Organic,1.1128931658201904,0.057471264367816084
+Apple Honeycrisp Organic ==> Organic Baby Spinach,1.08697964511918,0.20930232558139536
+Organic Baby Spinach ==> Apple Honeycrisp Organic,1.08697964511918,0.056133056133056136
+Apple Honeycrisp Organic ==> Organic Blueberries,1.536852467085025,0.19379844961240308
+Organic Blueberries ==> Apple Honeycrisp Organic,1.536852467085025,0.07936507936507936
+Apple Honeycrisp Organic ==> Organic Cucumber,1.3534216887555222,0.20155038759689922
+Organic Cucumber ==> Apple Honeycrisp Organic,1.353421688755522,0.06989247311827956
+Apple Honeycrisp Organic ==> Organic D'Anjou Pears,2.5750453570839515,0.19379844961240308
+Organic D'Anjou Pears ==> Apple Honeycrisp Organic,2.5750453570839515,0.13297872340425532
+Apple Honeycrisp Organic ==> Organic Garlic,2.1515934539190353,0.2635658914728682
+Organic Garlic ==> Apple Honeycrisp Organic,2.1515934539190353,0.11111111111111112
+Apple Honeycrisp Organic ==> Organic Hass Avocado,2.1515934539190353,0.39534883720930236
+Organic Hass Avocado ==> Apple Honeycrisp Organic,2.1515934539190353,0.11111111111111112
+Apple Honeycrisp Organic ==> Organic Raspberries,1.9663569313962046,0.35658914728682173
+Organic Raspberries ==> Apple Honeycrisp Organic,1.9663569313962044,0.10154525386313466
+Apple Honeycrisp Organic ==> Organic Strawberries,1.5677277640249645,0.4186046511627907
+Organic Strawberries ==> Apple Honeycrisp Organic,1.5677277640249643,0.08095952023988007
+Apple Honeycrisp Organic ==> Organic Yellow Onion,2.000981912144703,0.24031007751937986
+Organic Yellow Onion ==> Apple Honeycrisp Organic,2.000981912144703,0.10333333333333333
+Apple Honeycrisp Organic ==> Organic Zucchini,1.9304016035161433,0.24806201550387594
+Organic Zucchini ==> Apple Honeycrisp Organic,1.9304016035161435,0.0996884735202492
+Asparagus ==> Bag of Organic Bananas,1.2314265174078256,0.3692307692307692
+Bag of Organic Bananas ==> Asparagus,1.2314265174078256,0.1281708945260347
+Asparagus ==> Banana,1.0072580645161289,0.3
+Banana ==> Asparagus,1.007258064516129,0.10483870967741936
+Broccoli Crown ==> Asparagus,1.8050815850815851,0.1878787878787879
+Asparagus ==> Broccoli Crown,1.8050815850815853,0.11923076923076924
+Asparagus ==> Fresh Cauliflower,1.4268849961919268,0.11538461538461538
+Fresh Cauliflower ==> Asparagus,1.426884996191927,0.14851485148514854
+Asparagus ==> Garlic,2.3319641523525014,0.09615384615384615
+Garlic ==> Asparagus,2.3319641523525014,0.24271844660194172
+Asparagus ==> Green Bell Pepper,1.719271255060729,0.13076923076923078
+Green Bell Pepper ==> Asparagus,1.7192712550607288,0.17894736842105263
+Large Lemon ==> Asparagus,1.3326105661676133,0.13870246085011187
+Asparagus ==> Large Lemon,1.3326105661676133,0.23846153846153847
+Asparagus ==> Limes,1.4577188328912465,0.25384615384615383
+Limes ==> Asparagus,1.4577188328912467,0.15172413793103448
+Asparagus ==> Michigan Organic Kale,1.6680021367521365,0.09615384615384615
+Michigan Organic Kale ==> Asparagus,1.6680021367521367,0.1736111111111111
+Asparagus ==> Orange Bell Pepper,1.7767650158061117,0.10384615384615385
+Orange Bell Pepper ==> Asparagus,1.776765015806112,0.18493150684931509
+Asparagus ==> Organic Avocado,1.5513837437350186,0.21923076923076923
+Organic Avocado ==> Asparagus,1.5513837437350186,0.1614730878186969
+Asparagus ==> Organic Baby Arugula,1.4112994350282488,0.1
+Organic Baby Arugula ==> Asparagus,1.4112994350282486,0.14689265536723164
+Asparagus ==> Organic Baby Carrots,1.5660115215181294,0.1423076923076923
+Organic Baby Carrots ==> Asparagus,1.5660115215181294,0.16299559471365638
+Asparagus ==> Organic Baby Spinach,1.6978250439788902,0.3269230769230769
+Organic Baby Spinach ==> Asparagus,1.6978250439788902,0.17671517671517672
+Asparagus ==> Organic Blackberries,1.3653036437246964,0.10384615384615385
+Organic Blackberries ==> Asparagus,1.3653036437246966,0.14210526315789476
+Asparagus ==> Organic Blueberries,1.2810256410256409,0.16153846153846152
+Organic Blueberries ==> Asparagus,1.281025641025641,0.13333333333333333
+Organic Cilantro ==> Asparagus,1.7678153846153848,0.18400000000000002
+Asparagus ==> Organic Cilantro,1.7678153846153848,0.17692307692307693
+Organic Cucumber ==> Asparagus,1.394665012406948,0.14516129032258066
+Asparagus ==> Organic Cucumber,1.394665012406948,0.2076923076923077
+Asparagus ==> Organic D'Anjou Pears,1.2776186579378068,0.09615384615384615
+Organic D'Anjou Pears ==> Asparagus,1.2776186579378068,0.13297872340425532
+Asparagus ==> Organic Gala Apples,1.5652981849611063,0.11153846153846153
+Organic Gala Apples ==> Asparagus,1.5652981849611063,0.16292134831460675
+Organic Garlic ==> Asparagus,1.38149824032177,0.14379084967320263
+Asparagus ==> Organic Garlic,1.38149824032177,0.16923076923076924
+Organic Garnet Sweet Potato (Yam) ==> Asparagus,1.60993762993763,0.16756756756756758
+Asparagus ==> Organic Garnet Sweet Potato (Yam),1.60993762993763,0.11923076923076924
+Asparagus ==> Organic Grape Tomatoes,1.4411538461538462,0.13846153846153847
+Organic Grape Tomatoes ==> Asparagus,1.441153846153846,0.15
+Asparagus ==> Organic Hass Avocado,1.109384950561421,0.20384615384615384
+Organic Hass Avocado ==> Asparagus,1.109384950561421,0.11546840958605663
+Asparagus ==> Organic Italian Parsley Bunch,1.6339612768184195,0.09615384615384615
+Organic Italian Parsley Bunch ==> Asparagus,1.6339612768184195,0.17006802721088435
+Asparagus ==> Organic Large Extra Fancy Fuji Apple,1.1737904629307345,0.10384615384615385
+Organic Large Extra Fancy Fuji Apple ==> Asparagus,1.1737904629307343,0.12217194570135746
+Asparagus ==> Organic Lemon,1.414119214119214,0.13076923076923078
+Organic Lemon ==> Asparagus,1.414119214119214,0.14718614718614717
+Organic Peeled Whole Baby Carrots ==> Asparagus,1.6504011326097214,0.17177914110429446
+Asparagus ==> Organic Peeled Whole Baby Carrots,1.6504011326097214,0.10769230769230768
+Organic Raspberries ==> Asparagus,1.3361691288843605,0.1390728476821192
+Asparagus ==> Organic Raspberries,1.3361691288843607,0.2423076923076923
+Organic Red Bell Pepper ==> Asparagus,1.2970384615384616,0.135
+Asparagus ==> Organic Red Bell Pepper,1.2970384615384616,0.10384615384615385
+Organic Red Onion ==> Asparagus,2.0263496503496503,0.2109090909090909
+Asparagus ==> Organic Red Onion,2.0263496503496503,0.22307692307692306
+Asparagus ==> Organic Small Bunch Celery,1.2445197289756873,0.09615384615384615
+Organic Small Bunch Celery ==> Asparagus,1.2445197289756873,0.12953367875647667
+Asparagus ==> Organic Strawberries,1.181155576058125,0.3153846153846154
+Organic Strawberries ==> Asparagus,1.181155576058125,0.1229385307346327
+Organic Whole Milk ==> Asparagus,1.4557109557109558,0.15151515151515152
+Asparagus ==> Organic Whole Milk,1.4557109557109555,0.1346153846153846
+Asparagus ==> Organic Yellow Onion,1.3130512820512819,0.1576923076923077
+Organic Yellow Onion ==> Asparagus,1.3130512820512819,0.13666666666666666
+Organic Zucchini ==> Asparagus,1.9155523604121731,0.1993769470404984
+Asparagus ==> Organic Zucchini,1.9155523604121731,0.24615384615384614
+Original Hummus ==> Asparagus,1.4823296703296704,0.1542857142857143
+Asparagus ==> Original Hummus,1.4823296703296704,0.10384615384615385
+Asparagus ==> Red Peppers,1.3053929765886285,0.09615384615384615
+Red Peppers ==> Asparagus,1.3053929765886287,0.1358695652173913
+Asparagus ==> Seedless Red Grapes,1.0376307692307694,0.10384615384615385
+Seedless Red Grapes ==> Asparagus,1.0376307692307691,0.108
+Asparagus ==> Strawberries,0.9084637425611637,0.12692307692307692
+Strawberries ==> Asparagus,0.9084637425611637,0.09455587392550142
+Broccoli Crown ==> Bag of Organic Bananas,0.7882995509163734,0.2363636363636364
+Bag of Organic Bananas ==> Broccoli Crown,0.7882995509163734,0.0520694259012016
+Cantaloupe ==> Bag of Organic Bananas,1.2693342366937008,0.3805970149253731
+Bag of Organic Bananas ==> Cantaloupe,1.269334236693701,0.06809078771695594
+Bag of Organic Bananas ==> Carrots,1.1734658557088464,0.07610146862483311
+Carrots ==> Bag of Organic Bananas,1.1734658557088464,0.3518518518518519
+Celery Hearts ==> Bag of Organic Bananas,1.3985959774322752,0.41935483870967744
+Bag of Organic Bananas ==> Celery Hearts,1.3985959774322752,0.03471295060080107
+Crackers Cheddar Bunnies Snack Packs ==> Bag of Organic Bananas,1.4920244536575082,0.4473684210526316
+Bag of Organic Bananas ==> Crackers Cheddar Bunnies Snack Packs,1.4920244536575082,0.045393858477970624
+Bag of Organic Bananas ==> Extra Virgin Olive Oil,0.7892253284277254,0.04138851802403204
+Extra Virgin Olive Oil ==> Bag of Organic Bananas,0.7892253284277254,0.2366412213740458
+Bag of Organic Bananas ==> Feta Cheese Crumbles,1.3775468740929935,0.050734312416555405
+Feta Cheese Crumbles ==> Bag of Organic Bananas,1.3775468740929933,0.4130434782608695
+Bag of Organic Bananas ==> Fresh Cauliflower,1.3043265608269772,0.10547396528704939
+Fresh Cauliflower ==> Bag of Organic Bananas,1.3043265608269772,0.3910891089108911
+Bag of Organic Bananas ==> Frozen Organic Wild Blueberries,1.3971421354598923,0.04138851802403204
+Frozen Organic Wild Blueberries ==> Bag of Organic Bananas,1.3971421354598925,0.41891891891891897
+Garlic ==> Bag of Organic Bananas,0.8094935642345131,0.24271844660194172
+Bag of Organic Bananas ==> Garlic,0.8094935642345132,0.03337783711615487
+Globe Eggplant ==> Bag of Organic Bananas,1.5841789052069426,0.47500000000000003
+Bag of Organic Bananas ==> Globe Eggplant,1.5841789052069426,0.050734312416555405
+Bag of Organic Bananas ==> Grape White/Green Seedless,1.4473133989974054,0.06141522029372497
+Grape White/Green Seedless ==> Bag of Organic Bananas,1.4473133989974054,0.43396226415094347
+Bag of Organic Bananas ==> Grated Parmesan,1.4196766860318262,0.08411214953271028
+Grated Parmesan ==> Bag of Organic Bananas,1.419676686031826,0.42567567567567566
+Green Bell Pepper ==> Bag of Organic Bananas,0.9303211299276226,0.2789473684210526
+Bag of Organic Bananas ==> Green Bell Pepper,0.9303211299276226,0.07076101468624832
+Half & Half ==> Bag of Organic Bananas,1.120389686248331,0.3359375
+Bag of Organic Bananas ==> Half & Half,1.120389686248331,0.05740987983978637
+Hass Avocado ==> Bag of Organic Bananas,0.8939479443381553,0.26804123711340205
+Bag of Organic Bananas ==> Hass Avocado,0.8939479443381553,0.03471295060080107
+Hass Avocados ==> Bag of Organic Bananas,1.4293343505626548,0.42857142857142855
+Bag of Organic Bananas ==> Hass Avocados,1.4293343505626548,0.04005340453938584
+Bag of Organic Bananas ==> Honey Nut Cheerios,0.8004272363150866,0.04005340453938584
+Honey Nut Cheerios ==> Bag of Organic Bananas,0.8004272363150867,0.24
+Honeycrisp Apple ==> Bag of Organic Bananas,0.9601084273981471,0.2878787878787879
+Bag of Organic Bananas ==> Honeycrisp Apple,0.960108427398147,0.07610146862483311
+Bag of Organic Bananas ==> Jalapeno Peppers,1.0587661856019666,0.05340453938584779
+Jalapeno Peppers ==> Bag of Organic Bananas,1.0587661856019666,0.31746031746031744
+Bag of Organic Bananas ==> Large Alfresco Eggs,1.4096871429947833,0.05473965287049399
+Large Alfresco Eggs ==> Bag of Organic Bananas,1.4096871429947833,0.422680412371134
+Large Lemon ==> Bag of Organic Bananas,0.8729491671221584,0.26174496644295303
+Bag of Organic Bananas ==> Large Lemon,0.8729491671221583,0.1562082777036048
+Lemon Hummus ==> Bag of Organic Bananas,1.7656483154009266,0.5294117647058824
+Bag of Organic Bananas ==> Lemon Hummus,1.7656483154009266,0.036048064085447265
+Lime Sparkling Water ==> Bag of Organic Bananas,1.006826712346021,0.3018867924528302
+Bag of Organic Bananas ==> Lime Sparkling Water,1.006826712346021,0.04272363150867823
+Bag of Organic Bananas ==> Limes,1.0503690744747785,0.18291054739652868
+Limes ==> Bag of Organic Bananas,1.0503690744747785,0.31494252873563217
+Marinara Sauce ==> Bag of Organic Bananas,1.3837172968212934,0.4148936170212766
+Bag of Organic Bananas ==> Marinara Sauce,1.3837172968212936,0.0520694259012016
+Bag of Organic Bananas ==> Michigan Organic Kale,1.2738280670523658,0.07343124165554071
+Michigan Organic Kale ==> Bag of Organic Bananas,1.2738280670523658,0.3819444444444444
+Bag of Organic Bananas ==> Naturals Chicken Nuggets,1.4950508724276046,0.03471295060080107
+Naturals Chicken Nuggets ==> Bag of Organic Bananas,1.4950508724276046,0.4482758620689655
+Bag of Organic Bananas ==> Orange Bell Pepper,1.0736324231395282,0.06275033377837115
+Orange Bell Pepper ==> Bag of Organic Bananas,1.0736324231395284,0.3219178082191781
+Organic American Cheese Singles ==> Bag of Organic Bananas,1.5308717634441549,0.45901639344262296
+Bag of Organic Bananas ==> Organic American Cheese Singles,1.530871763444155,0.037383177570093455
+Bag of Organic Bananas ==> Organic Avocado,0.8692080469899431,0.12283044058744993
+Organic Avocado ==> Bag of Organic Bananas,0.8692080469899433,0.2606232294617564
+Bag of Organic Bananas ==> Organic Baby Arugula,1.507395925263817,0.10680907877169558
+Organic Baby Arugula ==> Bag of Organic Bananas,1.5073959252638167,0.4519774011299435
+Organic Baby Broccoli ==> Bag of Organic Bananas,1.452920725984481,0.4356435643564357
+Bag of Organic Bananas ==> Organic Baby Broccoli,1.452920725984481,0.05874499332443257
+Bag of Organic Bananas ==> Organic Baby Carrots,1.4251365991659952,0.1295060080106809
+Organic Baby Carrots ==> Bag of Organic Bananas,1.4251365991659952,0.4273127753303965
+Bag of Organic Bananas ==> Organic Baby Rainbow Carrots,1.1848429484927272,0.036048064085447265
+Organic Baby Rainbow Carrots ==> Bag of Organic Bananas,1.1848429484927272,0.3552631578947369
