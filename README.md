@@ -9,4 +9,4 @@ Deployed in Streamlit Community:
 https://grocery-basket-analysis.streamlit.app/
 
 
-![Alt text](image link)
+![Alt text](https://github.com/anthonyckleung/grocery-basket-analysis/blob/main/images/dashboard.png)
