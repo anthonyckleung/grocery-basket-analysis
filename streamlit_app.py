@@ -1,12 +1,12 @@
 """
-# My first app
-Here's our first attempt at using data to create a table:
+# Supermarket Basket Analysis Streamlit App
+# Created by: Anthony Leung 
+# github repo: https://github.com/anthonyckleung/grocery-basket-analysis
 """
 
 import streamlit as st
 import plotly.express as px 
 import pandas as pd
-from pyvis.network import Network
 from millify import prettify
 
 st.set_page_config(layout="wide")
@@ -32,7 +32,7 @@ container_2 = st.container()
 container_3 = st.container()
 
 
-
+# Container 1: Metrics
 with container_1:
   st.header(':basket: Supermarket Basket Analysis Dashboard', divider='gray')
   col1, col2, col3 = st.columns(3)
@@ -41,6 +41,7 @@ with container_1:
   st.divider()
 
 
+# Container 2: Order Statistics
 with container_2:
   st_col1, st_col2, st_col3 = st.columns(3)
 
@@ -91,6 +92,7 @@ with container_2:
   st.divider()
 
 
+# Container 3: Network Analysis
 with container_3:
   
   st_col1, st_col2 = st.columns([2,1])
