@@ -34,7 +34,7 @@ container_3 = st.container()
 
 # Container 1: Metrics
 with container_1:
-  st.header(':basket: Supermarket Basket Analysis Dashboard', divider='gray')
+  st.header(':basket: Grocery Basket Analysis Dashboard', divider='gray')
   col1, col2, col3 = st.columns(3)
   col1.metric(label='No. Order', value=prettify(1384617), delta='4% (Month-over-Month)')
   col2.metric(label='Avg. Basket Size per Order', value=31, delta='0.7% (Month-over-Month)')
