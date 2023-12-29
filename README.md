@@ -10,11 +10,13 @@ n.b.: Data ingestion is from a personal data warehouse. The original data source
 Deployed in Streamlit Community:
 https://grocery-basket-analysis.streamlit.app/
 
+#### Local deployment
+* Install requirements: `pip install -r requirements.txt`
+* Launch app from app directory: `streamlit run streamlit_app.py`
+
 
 ![Alt text](https://github.com/anthonyckleung/grocery-basket-analysis/blob/main/images/dashboard.png)
 
 
-### Local deployment
-* Install requirements: `pip install -r requirements.txt`
-* Launch app from app directory: `streamlit run streamlit_app.py`
+
 
